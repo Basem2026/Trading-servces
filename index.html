@@ -1,318 +1,174 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>بوابة أنظمة التداول المتقدمة — HFT · Arbitrage · MTP · Copy System</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <meta name="theme-color" content="#0b1220">
-  <style>
-    :root{
-      --bg1: linear-gradient(180deg,#041229 0%, #071027 60%);
-      --accent: #ffb703;
-      --accent2:#00d1b2;
-      --glass: rgba(255,255,255,0.03);
-      --muted: #9fb0c8;
-      --card:#07122a;
-      --white:#eaf6ff;
-    }
-    *{box-sizing:border-box;font-family:'Cairo',sans-serif}
-    html,body{height:100%;margin:0;background:var(--bg1);color:var(--white);-webkit-font-smoothing:antialiased}
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1300px;margin:0 auto;padding:20px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:68px;height:68px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;color:#001;font-weight:800;font-size:20px;box-shadow:0 14px 40px rgba(0,0,0,0.6)}
-    .brand h1{margin:0;font-size:18px}
-    nav{display:flex;gap:10px;align-items:center}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:var(--muted);cursor:pointer}
-    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent2));border:none;padding:10px 16px;border-radius:12px;color:#001;font-weight:800;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,0.5)}
-    /* HERO */
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;margin-top:18px;align-items:start}
-    .panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:22px;border-radius:16px;border:1px solid rgba(255,255,255,0.03)}
-    .title{font-size:28px;margin:0 0 8px 0}
-    .lead{color:var(--muted);margin-bottom:14px}
-    .hero-vis{height:220px;border-radius:12px;background-image:url('https://images.unsplash.com/photo-1526378725295-6b1a1f29f2b6?auto=format&fit=crop&w=1400&q=60');background-size:cover;background-position:center;position:relative;overflow:hidden}
-    .glass-badge{position:absolute;left:18px;top:18px;background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:999px;font-weight:700}
-    .countdown{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-    .cd-item{background:rgba(255,255,255,0.03);padding:10px 12px;border-radius:10px;text-align:center;min-width:68px}
-    .cd-num{font-size:20px;font-weight:900}
-    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px}
-    .feat{background:rgba(255,255,255,0.02);padding:10px;border-radius:10px;color:var(--muted)}
-    .aside-prices{display:flex;flex-direction:column;gap:10px}
-    .price-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed rgba(255,255,255,0.03)}
-    /* pricing grid */
-    .pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px}
-    .card{padding:16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
-    .card h3{margin:0 0 8px 0}
-    .card .price{font-weight:900;margin-top:6px}
-    /* big features */
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
-    .muted{color:var(--muted)}
-    /* contact */
-    form input,select,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--white)}
-    label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-    footer{margin-top:28px;padding:18px 0;color:var(--muted);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
-    /* responsive */
-    @media(max-width:1100px){.hero{grid-template-columns:1fr 360px}}
-    @media(max-width:880px){.hero{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.pricing{grid-template-columns:1fr}}
-    /* small flourish */
-    .badge-2{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);font-weight:700}
-    .logo-small{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;color:#001;font-weight:800}
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>أنظمة التداول المتطورة | نسخة 2050</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+<style>
+:root{
+ --c1:#00f7ff;
+ --c2:#00ff95;
+ --bg:#05080f;
+ --glass:rgba(255,255,255,0.05);
+ --t:#e9f4ff;
+ --muted:#b2c0d4;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Cairo';}
+body{background:var(--bg);color:var(--t);overflow-x:hidden;position:relative;}
+
+/* خلفية أنميشن 2050 */
+.bg-2050{
+ position:fixed;inset:0;z-index:-1;
+ background:radial-gradient(circle at 20% 20%,rgba(0,255,200,0.2),transparent 50%),
+             radial-gradient(circle at 80% 80%,rgba(0,200,255,0.2),transparent 50%),
+             #05080f;
+ animation:floatBG 12s infinite alternate ease-in-out;
+ filter:blur(40px);
+}
+@keyframes floatBG{0%{transform:scale(1);}100%{transform:scale(1.3);}}
+
+/* هيدر 2050 */
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;position:sticky;top:0;background:rgba(5,8,15,0.6);backdrop-filter:blur(10px);z-index:1000;border-bottom:1px solid rgba(255,255,255,0.08);} 
+.logo{font-size:28px;font-weight:900;background:linear-gradient(90deg,var(--c1),var(--c2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+nav button{background:var(--glass);border:1px solid rgba(255,255,255,0.1);padding:10px 14px;color:var(--t);border-radius:12px;margin-left:10px;cursor:pointer;transition:.3s;} 
+nav button:hover{background:linear-gradient(90deg,var(--c1),var(--c2));color:#000;}
+
+/* زر تغيير اللغة */
+#langToggle{background:linear-gradient(90deg,var(--c1),var(--c2));color:#000;font-weight:900;}
+
+/* هيرو */
+.hero{padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+.hero h1{font-size:48px;font-weight:900;line-height:1.4;}
+.hero p{color:var(--muted);margin:15px 0;font-size:18px;}
+.btn-main{background:linear-gradient(90deg,var(--c1),var(--c2));border:none;color:#000;padding:14px 24px;border-radius:14px;font-weight:800;margin-top:10px;font-size:18px;cursor:pointer;box-shadow:0 0 20px rgba(0,255,200,0.4);} 
+.hero img{width:100%;border-radius:20px;box-shadow:0 0 40px rgba(0,255,200,0.4);} 
+
+/* المنتجات */
+.section-title{text-align:center;font-size:36px;margin:40px 0;font-weight:900;}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;padding:20px 40px;}
+.card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:20px;border-radius:20px;backdrop-filter:blur(10px);transition:0.3s;position:relative;}
+.card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 0 40px rgba(0,255,200,0.3);} 
+.card img{width:100%;border-radius:16px;margin-bottom:12px;}
+.price{color:var(--c2);font-size:22px;font-weight:900;margin:10px 0;}
+.desc{color:var(--muted);font-size:15px;line-height:1.6;}
+.btn-buy{background:var(--glass);border:1px solid var(--c1);padding:10px;width:100%;margin-top:12px;border-radius:12px;color:var(--t);cursor:pointer;font-weight:700;transition:0.3s;} 
+.btn-buy:hover{background:linear-gradient(90deg,var(--c1),var(--c2));color:#000;}
+
+/* تفاعل الدفع */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.7);display:none;justify-content:center;align-items:center;z-index:2000;} 
+.modal{background:#0b1220;padding:30px;width:330px;border-radius:20px;text-align:center;border:1px solid var(--c1);} 
+.modal button{width:100%;padding:12px;margin:8px 0;border-radius:12px;border:none;font-weight:900;cursor:pointer;} 
+.btn-w{background:#25d366;} .btn-t{background:#0088cc;} .btn-e{background:#ffb703;} 
+
+/* دفع */
+.paymentBox{max-width:600px;margin:auto;background:rgba(255,255,255,0.04);padding:30px;border-radius:20px;border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(10px);} 
+.paymentBox p{direction:ltr;text-align:center;font-size:18px;font-weight:800;margin-top:8px;} 
+
+/* فوتر */
+footer{text-align:center;color:var(--muted);padding:40px;margin-top:40px;font-size:14px;}
+
+/* ريسبونسيف */
+@media(max-width:900px){.hero{grid-template-columns:1fr;text-align:center;}.hero img{margin-top:20px;}}
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <!-- HEADER -->
-    <header>
-      <div class="brand">
-        <div class="logo">FX</div>
-        <div>
-          <h1>بوابة أنظمة التداول المتقدمة</h1>
-          <div class="muted">HFT · Arbitrage · MTPredictor · Copy System</div>
-        </div>
-      </div>
+<div class="bg-2050"></div>
+<header>
+ <div class="logo">FX SYSTEMS 2050</div>
+ <nav>
+   <button onclick="scrollToSec('products')">المنتجات</button>
+   <button onclick="scrollToSec('payment')">الدفع</button>
+   <button onclick="openModal()">اطلب الآن</button>
+   <button id="langToggle" onclick="toggleLang()">EN</button>
+ </nav>
+</header>
 
-      <nav>
-        <div style="display:flex;gap:8px;align-items:center">
-          <button class="btn-ghost" onclick="setLang('ar')">العربية</button>
-          <button class="btn-ghost" onclick="setLang('en')">EN</button>
-        </div>
-        <button class="btn-ghost" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">المنتجات</button>
-        <button class="btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">تواصل</button>
-        <button class="btn-primary" onclick="openContactOptions()">اطلب الآن</button>
-      </nav>
-    </header>
+<section class="hero">
+ <div data-aos="fade-up">
+   <h1>أحدث أنظمة التداول — جيل 2050 HFT • AI • Arbitrage • MTP</h1>
+   <p>تقنيات الجيل القادم — سرعة، ذكاء، دقة، مردود فائق. أنظمة مبنية للربحية المستمرة.</p>
+   <button class="btn-main" onclick="openModal()">ابدأ الآن</button>
+ </div>
+ <img src="https://images.unsplash.com/photo-1649972904349-db1b7d4c8897?auto=format&fit=crop&w=1400&q=80" />
+</section>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="panel">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
-          <div style="flex:1;min-width:220px">
-            <div class="badge-2">ترخيص / تثبيت</div>
-            <h2 class="title" id="mainTitle">أنظمة تداول متقدمة — HFT · Arbitrage · Copy System</h2>
-            <p class="lead" id="mainSub">نفّذ بسرعات HFT، اكتشف فرص أربيتراج، واحصل على نظام نسخ احترافي متوافق مع MT4/5.</p>
-            <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
-              <button class="btn-primary" onclick="openContactOptions('bundle')">احصل على الحزمة</button>
-              <button class="btn-ghost" onclick="openContactOptions('demo')">عرض تجريبي</button>
-            </div>
+<h2 class="section-title" id="products">أنظمة التداول المتقدمة</h2>
+<div class="products">
+ 
+ <div class="card" data-aos="fade-up">
+   <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa" />
+   <h3>بوت HFT سكالبينج فائق السرعة</h3>
+   <p class="price">300 USD</p>
+   <p class="desc">أسرع بوت تداول عالي التردد يعتمد على Tick-to-Tick مع خوارزمية تنفيذ شبه لحظي. مثالي للسكالبينج وأرباح ثابتة في بيئات مختلفة.</p>
+   <button class="btn-buy" onclick="openModal()">اطلب الآن</button>
+ </div>
 
-            <div class="features" style="margin-top:16px">
-              <div class="feat">تنفيذ Tick-based منخفض التأخير (MT5)</div>
-              <div class="feat">بوت أربيتراج لعملات رقمية — تنفيذ فوري</div>
-              <div class="feat">MTPredictor v6 / v8 — مفعل مدى الحياة</div>
-              <div class="feat">سيستم نسخ يعمل عبر وسطاء مختلفين</div>
-            </div>
-          </div>
+ <div class="card" data-aos="fade-up">
+   <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" />
+   <h3>بوت Arbitrage للعملات الرقمية</h3>
+   <p class="price">400 USD</p>
+   <p class="desc">أقوى نظام أربيتراج بين البورصات بفارق زمني شبه معدوم. أرباح شبه مضمونة باستخدام قياس فروقات الأسعار اللحظية.</p>
+   <button class="btn-buy" onclick="openModal()">اطلب الآن</button>
+ </div>
 
-          <div style="width:360px">
-            <div class="hero-vis" role="img" aria-label="visual">
-              <div class="glass-badge">حزمة البداية</div>
-            </div>
+ <div class="card" data-aos="fade-up">
+   <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e" />
+   <h3>MTPredictor v6 & v8</h3>
+   <p class="price">100 - 300 USD</p>
+   <p class="desc">نسخة مفعلة مدى الحياة من أقوى محلل موجات طاقة — نقاط دخول وخروج دقيقة.</p>
+   <button class="btn-buy" onclick="openModal()">اطلب الآن</button>
+ </div>
 
-            <div style="margin-top:12px" class="panel">
-              <div style="font-weight:800">الأسعار السريعة</div>
-              <div style="margin-top:10px" class="aside-prices">
-                <div class="price-row"><div>بوت HFT</div><div>$300</div></div>
-                <div class="price-row"><div>Bot Arbitrage</div><div>$400</div></div>
-                <div class="price-row"><div>MTPredictor v6</div><div>$300</div></div>
-                <div class="price-row"><div>MTPredictor v8</div><div>$100</div></div>
-                <div class="price-row"><div>سيستم النسخ MT4/5</div><div>$100</div></div>
-                <div class="price-row"><div>خدمات برمجة</div><div>ابتداءً من $50</div></div>
-              </div>
-            </div>
-          </div>
-        </div>
+ <div class="card" data-aos="fade-up">
+   <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" />
+   <h3>سيستم نسخ MT4 / MT5</h3>
+   <p class="price">100 USD</p>
+   <p class="desc">نسخ كامل بين أي عدد من الحسابات، لا يشترط وسيط واحد، مع تحكم باللون واللوت وإدارة المخاطر.</p>
+   <button class="btn-buy" onclick="openModal()">اطلب الآن</button>
+ </div>
 
-        <!-- countdown inspired -->
-        <div style="margin-top:14px">
-          <div class="muted">عرض خاص ينتهي بعد:</div>
-          <div class="countdown" id="countdown">
-            <div class="cd-item"><div class="cd-num" id="cdDays">00</div><div class="muted">أيام</div></div>
-            <div class="cd-item"><div class="cd-num" id="cdHours">00</div><div class="muted">ساعات</div></div>
-            <div class="cd-item"><div class="cd-num" id="cdMins">00</div><div class="muted">دقائق</div></div>
-            <div class="cd-item"><div class="cd-num" id="cdSecs">00</div><div class="muted">ثواني</div></div>
-          </div>
-        </div>
-      </div>
+</div>
 
-      <!-- side quick contact -->
-      <aside style="width:420px">
-        <div class="panel">
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <div><strong>اتصل سريع</strong><div class="muted" style="font-size:13px">احجز عبر وسيلة تفضلها</div></div>
-            <div class="logo-small">FX</div>
-          </div>
+<h2 class="section-title" id="payment">طرق الدفع</h2>
+<div class="paymentBox">
+ <h3>Instapay</h3>
+ <p>basemtp@instapay</p>
+ <hr>
+ <h3>USDT TRC20</h3>
+ <p>TDsFyumvjYMrnpMx4w6AdWNCHcpVA96jpY</p>
+ <button class="btn-main" onclick="openModal()">أرسِل بيانات الدفع</button>
+</div>
 
-          <div style="margin-top:12px">
-            <div style="display:flex;gap:8px">
-              <a class="btn-primary" href="https://wa.me/201065673301" target="_blank">واتساب 01065673301</a>
-              <a class="btn-ghost" href="https://t.me/Basemtp" target="_blank">تليجرام</a>
-            </div>
-            <div style="margin-top:10px" class="muted">أو أرسل بريدًا: <a href="mailto:satmelano11@gmail.com">satmelano11@gmail.com</a></div>
-          </div>
+<footer>© 2050 — FX SYSTEMS — جميع الحقوق محفوظة</footer>
 
-          <div style="margin-top:12px" class="muted">خدماتنا: تركيب، اختبار زمن تنفيذ HFT، برمجة مخصصة، ربط موقع، دعم 24/7.</div>
-        </div>
-      </aside>
-    </section>
-
-    <!-- PRICING -->
-    <section id="pricing" class="pricing" aria-label="الأسعار">
-      <div class="card">
-        <h3>بوت HFT — Tick-based</h3>
-        <div class="price">$300</div>
-        <p class="muted">تنفيذ منخفض التأخير للعمل على MT5، إعداد VPS، واختبارات زمن استجابة.</p>
-        <div style="margin-top:8px"><button class="btn-primary" onclick="openContactOptions('hft')">اطلب</button></div>
-      </div>
-      <div class="card">
-        <h3>Bot Arbitrage (Crypto)</h3>
-        <div class="price">$400</div>
-        <p class="muted">أربيتراج بين منصات مع إدارة مخاطر وعمليات سحب آمن.</p>
-        <div style="margin-top:8px"><button class="btn-primary" onclick="openContactOptions('arb')">اطلب</button></div>
-      </div>
-      <div class="card">
-        <h3>MTPredictor v6</h3>
-        <div class="price">$300</div>
-        <p class="muted">نسخة مفعّلة — إشارات دخول وخروج قابلة للربط مع TradingView.</p>
-        <div style="margin-top:8px"><button class="btn-primary" onclick="openContactOptions('mtp6')">اطلب</button></div>
-      </div>
-      <div class="card">
-        <h3>MTPredictor v8</h3>
-        <div class="price">$100</div>
-        <p class="muted">نسخة خفيفة وسريعة للتكامل.</p>
-        <div style="margin-top:8px"><button class="btn-primary" onclick="openContactOptions('mtp8')">اطلب</button></div>
-      </div>
-      <div class="card">
-        <h3>سيستم النسخ MT4/5</h3>
-        <div class="price">$100</div>
-        <p class="muted">نسخ متعدد الحسابات عبر وسطاء مختلفين، تخصيص ألوان لكل ناسخ.</p>
-        <div style="margin-top:8px"><button class="btn-primary" onclick="openContactOptions('copy')">اطلب</button></div>
-      </div>
-      <div class="card">
-        <h3>خدمات برمجة</h3>
-        <div class="price">ابتداءً من $50</div>
-        <p class="muted">برمجة مؤشرات، إكسبرتات، وربط أنظمة كاملة بالموقع.</p>
-        <div style="margin-top:8px"><button class="btn-primary" onclick="openContactOptions('dev')">اطلب</button></div>
-      </div>
-    </section>
-
-    <!-- FEATURES & CONTACT -->
-    <section class="two-col" style="margin-top:24px">
-      <div class="card">
-        <h3>لماذا نتميز؟</h3>
-        <ul class="muted" style="line-height:1.8">
-          <li>اختبارات زمن تنفيذ HFT وتهيئة لتقليل الـ latency.</li>
-          <li>أربيتراج متعدد المنصات مع إجراءات أمان للسحب.</li>
-          <li>دعم تركيب على VPS وتشغيل 24/7.</li>
-          <li>تكامل مع TradingView ولوحة Web UI لمراقبة الأداء.</li>
-        </ul>
-      </div>
-
-      <div id="contact" class="card">
-        <h3>تواصل / حجز</h3>
-        <form onsubmit="submitContact(event)">
-          <div class="grid-2">
-            <div>
-              <label>الاسم</label>
-              <input id="cName" required>
-            </div>
-            <div>
-              <label>الهاتف / واتساب</label>
-              <input id="cPhone" required>
-            </div>
-          </div>
-          <div style="margin-top:8px">
-            <label>الخدمة المطلوبة</label>
-            <select id="cService">
-              <option>بوت HFT — $300</option>
-              <option>Bot Arbitrage — $400</option>
-              <option>MTPredictor v6 — $300</option>
-              <option>MTPredictor v8 — $100</option>
-              <option>سيستم النسخ MT4/5 — $100</option>
-              <option>خدمة برمجة — ابتداءً من $50</option>
-            </select>
-          </div>
-          <div style="margin-top:8px">
-            <label>ملاحظات</label>
-            <textarea id="cNotes" rows="4"></textarea>
-          </div>
-          <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
-            <button class="btn-primary" type="submit">أرسل الطلب</button>
-            <a class="btn-ghost" href="https://wa.me/201065673301" target="_blank">واتساب</a>
-            <a class="btn-ghost" href="https://t.me/Basemtp" target="_blank">تليجرام</a>
-            <a class="btn-ghost" href="mailto:satmelano11@gmail.com">إيميل</a>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <footer>
-      <div>
-        <strong>بوابة أنظمة التداول المتقدمة</strong>
-        <div class="muted">جميع الحقوق محفوظة © 2025</div>
-      </div>
-      <div style="text-align:right">
-        <div class="muted">واتساب: <a href="https://wa.me/201065673301">01065673301</a></div>
-        <div class="muted">تليجرام: <a href="https://t.me/Basemtp">@Basemtp</a></div>
-        <div class="muted">ايميل: <a href="mailto:satmelano11@gmail.com">satmelano11@gmail.com</a></div>
-      </div>
-    </footer>
-  </div>
-
-  <!-- Contact Options Modal -->
-  <div id="contactModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;z-index:9999">
-    <div style="width:90%;max-width:500px;background:var(--card);padding:22px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);text-align:center;">
-      <h3 style="margin:0 0 14px 0">اختر وسيلة التواصل</h3>
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <a class="btn-primary" href="https://wa.me/201065673301" target="_blank">واتساب</a>
-        <a class="btn-primary" href="https://t.me/Basemtp" target="_blank">تليجرام</a>
-        <a class="btn-primary" href="mailto:satmelano11@gmail.com">بريد إلكتروني</a>
-      </div>
-      <button onclick="closeContactModal()" style="margin-top:18px;background:transparent;border:none;color:var(--muted);font-weight:700;cursor:pointer">إلغاء</button>
-    </div>
-  </div>
+<div class="modal-bg" id="modalBg">
+ <div class="modal">
+   <h3>اختر طريقة التواصل</h3>
+   <button class="btn-w" onclick="location.href='https://wa.me/201065673301'">واتساب</button>
+   <button class="btn-t" onclick="location.href='https://t.me/Basemtp'">تليجرام</button>
+   <button class="btn-e" onclick="location.href='mailto:satmelano11@gmail.com'">إيميل</button>
+   <button onclick="closeModal()" style="margin-top:10px;background:#333;color:#fff;">إغلاق</button>
+ </div>
+</div>
 
 <script>
-  function openContactOptions(){ document.getElementById('contactModal').style.display = 'flex'; document.body.style.overflow = 'hidden'; }
-  function closeContactModal(){ document.getElementById('contactModal').style.display = 'none'; document.body.style.overflow = 'auto'; }
+function scrollToSec(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});} 
+function openModal(){document.getElementById('modalBg').style.display='flex';} 
+function closeModal(){document.getElementById('modalBg').style.display='none';} 
 
-  // countdown
-  (function countdown(){
-    const end = new Date(Date.now() + 72*3600*1000);
-    const d = (id,val)=>document.getElementById(id).innerText = String(val).padStart(2,'0');
-    function tick(){
-      const now = new Date();
-      const diff = Math.max(0, end - now);
-      const secs = Math.floor(diff/1000)%60;
-      const mins = Math.floor(diff/1000/60)%60;
-      const hours = Math.floor(diff/1000/60/60)%24;
-      const days = Math.floor(diff/1000/60/60/24);
-      d('cdDays',days); d('cdHours',hours); d('cdMins',mins); d('cdSecs',secs);
-      if(diff>0) requestAnimationFrame(()=>setTimeout(tick,500));
-    }
-    tick();
-  })();
-
-  // language switch (basic)
-  const texts = {
-    en: {
-      mainTitle: 'Ultimate Trading Systems — HFT · Arbitrage · Copy System',
-      mainSub: 'Execute at HFT speeds, discover arbitrage, and get a pro copy system for MT4/5.'
-    },
-    ar: {
-      mainTitle: 'أنظمة تداول متقدمة — HFT · Arbitrage · Copy System',
-      mainSub: 'نفّذ بسرعات HFT، اكتشف فرص أربيتراج، واحصل على نظام نسخ احترافي متوافق مع MT4/5.'
-    }
-  };
-  function setLang(l){
-    if(l==='en'){ document.documentElement.lang='en'; document.documentElement.dir='ltr'; }
-    else { document.documentElement.lang='ar'; document.documentElement.dir='rtl'; }
-    document.getElementById('mainTitle').innerText = texts[l].mainTitle;
-    document.getElementById('mainSub').innerText = texts[l].mainSub;
-  }
-  setLang('ar');
+function toggleLang(){
+ let html=document.documentElement;
+ if(html.lang==='ar'){
+   html.lang='en';html.dir='ltr';document.getElementById('langToggle').innerText='AR';
+ }else{
+   html.lang='ar';html.dir='rtl';document.getElementById('langToggle').innerText='EN';
+ }
+}
 </script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({duration:1000});</script>
 </body>
 </html>
